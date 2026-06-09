@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Analizador Matemático</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-container">
+
+    <h2>Analizador Matemático</h2>
+
+    <div class="tabs">
+        <button class="tab active" onclick="mostrarTab('ed')">Ecuaciones Diferenciales</button>
+        <button class="tab" onclick="mostrarTab('laplace')">Transformada de Laplace</button>
+    </div>
+
+    <div id="tab-ed">
+
+        <h4>Vista previa:</h4>
+        <div id="vista-ecuacion" class="ecuacion-vista"></div>
+
+        <input id="ecuacion" placeholder="Ej: y'' + y = 0" oninput="actualizarVista()">
+
+        <div class="botones">
+            <button onclick='insertar("y&#39;")'>y′</button>
+            <button onclick='insertar("y&#39;&#39;")'>y″</button>
+            <button onclick='insertar("^2")'>²</button>
+        </div>
+
+        <button class="btn-analizar" onclick="analizar()">Analizar ecuación</button>
+
+        <div id="mensaje" class="mensaje"></div>
+
+        <div id="resultado" class="resultado d-none">
+            <div><b>Orden:</b> <span id="orden"></span></div>
+            <div><b>Grado:</b> <span id="grado"></span></div>
+            <div><b>Linealidad:</b> <span id="linealidad"></span></div>
+            <div><b>Tipo:</b> <span id="tipo"></span></div>
+        </div>
+    </div>
+
+    <div id="tab-laplace" class="d-none">
+
+        <h4>Transformada de Laplace</h4>
+
+        <div class="ecuacion-vista" id="vista-laplace"></div>
+
+        <input
+            id="laplaceInput"
+            placeholder="Ej: sin(3t), e^(2t), t^2"
+            oninput="actualizarVistaLaplace()"
+        >
+
+        <div class="botones">
+            <button onclick="insertarLaplace('sin(')">sin</button>
+            <button onclick="insertarLaplace('cos(')">cos</button>
+            <button onclick="insertarLaplace('tan(')">tan</button>
+            <button onclick="insertarLaplace('e^(')">e^</button>
+            <button onclick="insertarLaplace('t^2')">t²</button>
+        </div>
+
+        <button class="btn-analizar" onclick="resolverLaplace()">Resolver Laplace</button>
+
+        <div id="laplaceResultado" class="resultado d-none"></div>
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
