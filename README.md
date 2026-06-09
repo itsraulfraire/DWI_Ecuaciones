@@ -9,11 +9,9 @@ Desarrollar una aplicación web que permita a los usuarios realizar cálculos ma
 | Integrante | Rol |
 |------------|------|
 | Raúl Fraire | Líder |
-| Nombre Compañero 1 | Documentador |
-| Nombre Compañero 2 | Integrador |
-| Nombre Compañero 3 | Diseñador |
-
-> **Nota:** Los roles fueron asignados con fines académicos para simular un entorno de trabajo colaborativo en un trabajo individual.
+| Daniel Nolberto | Documentador |
+| Sofía Hernandez | Integrador |
+| Jesus Rodriguez | Diseñador |
 
 ## Flujo de trabajo utilizado
 
